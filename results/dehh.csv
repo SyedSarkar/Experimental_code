@@ -1,0 +1,18 @@
+user,phase,cue,response,sentiment,confidence,score,response_time_sec,accepted,sentence
+dehh,1,Goat,happy,POSITIVE,0.9998753070831299,2,4.29,True,
+dehh,1,Post,galjsd],NEGATIVE,0.8815242648124695,0,5.43,False,
+dehh,1,Post,rot,NEGATIVE,0.9997543692588806,0,8.88,False,
+dehh,1,Post,wt,POSITIVE,0.5498072504997253,2,12.48,True,
+dehh,1,Real,wet,NEGATIVE,0.9985610842704773,0,3.76,False,
+dehh,1,Real,money,POSITIVE,0.9659324884414673,2,8.2,True,
+dehh,1,Money,state,POSITIVE,0.9914621710777283,2,2.22,True,
+dehh,1,Space,maths,POSITIVE,0.951909601688385,2,2.37,True,
+dehh,2,,animal,POSITIVE,0.9958601593971252,2,3.3,True,I am
+dehh,2,,a socail animal,POSITIVE,0.9214635491371155,0,6.68,False,He is
+dehh,2,,a sociall animal,POSITIVE,0.9932410717010498,0,13.26,False,He is
+dehh,2,,asocial animal,POSITIVE,0.5085767507553101,2,17.2,True,He is
+dehh,2,,joyful,POSITIVE,0.9998824596405029,2,4.55,True,He was
+dehh,2,,bad,NEGATIVE,0.999782383441925,0,1.9,False,Ali never had
+dehh,2,,cake,POSITIVE,0.9961012601852417,2,6.78,True,Ali never had
+dehh,2,,boss,POSITIVE,0.9520483016967773,2,2.59,True,I wish I was
+
