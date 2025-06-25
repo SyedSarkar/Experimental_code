@@ -35,10 +35,11 @@ def log_to_gsheet(row_dict):
     row = [str(row_dict.get(col, "")) for col in HEADERS]
     sheet.append_row(row)
 # ----------------------------------
-
-# Set NLTK data path
-nltk.data.path.append(os.path.join(os.path.dirname(__file__), 'nltk_data'))
-english_vocab = set(w.lower() for w in words.words()) | set(w.lower() for w in brown.words())
+# Download NLTK resources
+nltk.download('brown')
+nltk.download('words')
+english_vocab = set(w.lower() for w in words.words())  # Use NLTK words corpus
+brown_vocab = set(w.lower() for w in brown.words())
 
 # Custom list of valid hyphenated words
 VALID_HYPHENATED_WORDS = {
