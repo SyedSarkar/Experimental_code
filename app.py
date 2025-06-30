@@ -302,13 +302,12 @@ if st.session_state.phase in ["Block_1", "Block_2", "Block_3", "Block_4"]:
                     st.session_state.used_texts.add(phrase)
                     st.session_state.step += 1
                     st.session_state.last_response_accepted = True
-                    feedback.markdown(format_feedback(f"✅ Correct | Score +{score}", "#27ae60"), unsafe_allow_html=True)
+                    feedback.markdown(format_feedback(f"✅ Welldone! Correct | Score +{score}", "#27ae60"), unsafe_allow_html=True)
 
                 st.session_state.responses.append(entry)
                 safe_id = re.sub(r'[^\w\-]', '_', st.session_state.user_id)
                 pd.DataFrame(st.session_state.responses).to_csv(f"results/{safe_id}.csv", index=False)
-                if entry["accepted"]:  # Log only accepted responses
-                    log_to_gsheet(entry)
+                log_to_gsheet(entry)
                 st.session_state.start_time = None if entry["accepted"] else time.time()
 
             except Exception as e:
