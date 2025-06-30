@@ -52,6 +52,10 @@ def log_to_gsheet(row_dict):
             st.error(f"Logging failed again: {str(e)}. Data saved locally only.")
 
 # ----------------------------------
+VALID_HYPHENATED_WORDS = {
+    "self-aware", "well-being", "self-esteem", "self-confidence", "self-assured",
+    "well-adjusted", "high-spirited", "self-reliant", "self-worth", "well-intentioned"
+}
 # Spell Checker Setup
 @st.cache_resource
 def init_spell_checker():
@@ -62,10 +66,7 @@ def init_spell_checker():
 spell = init_spell_checker()
 
 # Custom lists
-VALID_HYPHENATED_WORDS = {
-    "self-aware", "well-being", "self-esteem", "self-confidence", "self-assured",
-    "well-adjusted", "high-spirited", "self-reliant", "self-worth", "well-intentioned"
-}
+
 STOPWORDS = {'Hassan', 'Asim', 'Ather'}
 
 def looks_like_gibberish(word):
@@ -226,7 +227,7 @@ if st.session_state.phase in ["Block_1", "Block_2", "Block_3", "Block_4"]:
                     st.session_state.step = 0
                     st.session_state.responses = []
                 st.rerun()
-                return
+                st.stop()
             st.session_state.current_cue = random.choice(available_cues)
             st.session_state.last_response_accepted = False
 
